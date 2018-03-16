@@ -11,6 +11,8 @@ node {
      myTestContainer.inside {
        sh 'npm install --only=dev'
        sh 'npm test'
+       sh 'npm ls'
+       sh 'npm update'
      }
    }
    stage('test with a DB') {
