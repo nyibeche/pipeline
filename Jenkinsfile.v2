@@ -14,7 +14,7 @@ node {
        sh  'npm install express'
        sh  'npm install jade'
        sh 'npm test'
-       sh 'npm ls'
+       sh 'npm ls -g'
        sh 'npm update'
      }
    }
