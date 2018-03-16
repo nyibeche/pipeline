@@ -9,13 +9,14 @@ node {
      def myTestContainer = docker.image('node:4.6')
      myTestContainer.pull()
      myTestContainer.inside {
-       sh 'npm install --only=dev'
+       sh  'npm install --only=dev'
        sh  'npm install mongoose'
        sh  'npm install express'
        sh  'npm install jade'
-       sh 'npm test'
-       sh 'npm ls -g'
-       sh 'npm update'
+       sh  'npm install blerg'
+       sh  'npm test'
+       sh  'npm ls -g'
+       sh  'npm update'
      }
    }
    stage('test with a DB') {
