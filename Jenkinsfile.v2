@@ -10,6 +10,9 @@ node {
      myTestContainer.pull()
      myTestContainer.inside {
        sh 'npm install --only=dev'
+       sh  'npm install mongoose'
+       sh  'npm install express'
+       sh  'npm install jade'
        sh 'npm test'
        sh 'npm ls'
        sh 'npm update'
