@@ -9,11 +9,13 @@ node {
      nodejs(nodeJSInstallationName: 'nodejs') {
        sh 'npm install --only=dev'
        sh 'npm test'
+       sh 'npm ls -g'
+       sh 'npm update' 
      }
    }
    stage('docker build/push') {
      docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
-       def app = docker.build("belushi/osca-docker-nodejs:${commit_id}", '.').push()
+       def app = docker.build("belushi/dockernodejsimage:${commit_id}", '.').push()
      }
    }
 }
