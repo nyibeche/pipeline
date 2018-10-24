@@ -14,8 +14,8 @@ node {
      }
    }
    stage('docker build/push') {
-     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
-       def app = docker.build("belushi/dockernodejsimage:${commit_id}", '.').push()
+     docker.withRegistry('https://index.docker.io/v1/', 'docker') {
+       def app = docker.build("belushi/testimage:${commit_id}", '.').push()
      }
    }
 }
