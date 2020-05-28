@@ -14,7 +14,7 @@ node {
      }
    }
    stage('docker build/push') {
-     docker.withRegistry('https://index.docker.io/v1/', 'docker') {
+     docker.withRegistry('https://index.docker.io/v1/', 'TestMe') {
        def app = docker.build("belushi/testimage:${commit_id}", '.').push()
      }
    }
