@@ -6,7 +6,7 @@ node {
      commit_id = readFile('.git/commit-id').trim()
    }
    stage('testrun') {
-     nodejs(nodeJSInstallationName: 'nodejs') {
+     nodejs(nodeJSInstallationName: 'NodeJs') {
        sh 'npm install --only=dev'
        sh 'npm test'
        sh 'npm ls -g'
