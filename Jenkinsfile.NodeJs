@@ -30,7 +30,7 @@ pipeline {
         stage('NodeJs package as a tar file') {
            steps {
                sh """
-               tar cvf $WORKSPACE/NodeJs.tar.gz *
+               tar cvf $WORKSPACE/NodeJs.tar.gz node_modules/ *.json *.js test/
                """
            }
         }
