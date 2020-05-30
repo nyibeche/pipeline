@@ -9,8 +9,8 @@ pipeline {
         stage('clone down NodeJs repo') {
             steps {
                 git branch: 'master',
-                    credentialsId: 'github_jenkins',
-                        url: 'https://github.com/oscarose/pipeline.git'
+                    credentialsId: '9cdd3118-01f2-4b0d-857e-a2be2e27652bgithub_jenkins',
+                        url: 'https://github.com/nyibeche/pipeline.git'
             }
         }
         stage('NodeJs install') {
@@ -37,8 +37,8 @@ pipeline {
         stage('Push tarFile to s3 bucket') {
            steps {
                sh """
-                aws s3 mb s3://nodejsogbademo --region ${aws_region}
-                aws s3 cp $WORKSPACE/NodeJs.tar.gz s3://nodejsogbademo
+                aws s3 mb s3://nodejscorneldemo --region ${aws_region}
+                aws s3 cp $WORKSPACE/NodeJs.tar.gz s3://nodejscorneldemo
                """
            }
         }
