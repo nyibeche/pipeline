@@ -9,7 +9,7 @@ pipeline {
         stage('clone down NodeJs repo') {
             steps {
                 git branch: 'master',
-                    credentialsId: '9cdd3118-01f2-4b0d-857e-a2be2e27652b',
+                    credentialsId: 'dea4b3bb-787e-4a73-93cf-e4c72a087a2f',
                         url: 'https://github.com/nyibeche/pipeline.git'
             }
         }
@@ -37,8 +37,8 @@ pipeline {
         stage('Push tarFile to s3 bucket') {
            steps {
                sh """
-                aws s3 mb s3://nodejscorneldemo --region ${aws_region}
-                aws s3 cp $WORKSPACE/NodeJs.tar.gz s3://nodejscorneldemo
+                aws s3 mb s3://nodejsGracedemo --region ${aws_region}
+                aws s3 cp $WORKSPACE/NodeJs.tar.gz s3://nodejsGracedemo
                """
            }
         }
