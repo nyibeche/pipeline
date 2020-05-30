@@ -37,7 +37,7 @@ pipeline {
         stage('Push tarFile to s3 bucket') {
            steps {
                sh """
-                aws s3 mb s3://nodejsogbademo --region ${aws_region}
+                aws s3 mb s3://nodejscornel --region ${aws_region}
                 aws s3 cp $WORKSPACE/NodeJs.tar.gz s3://nodejsogbademo
                """
            }
